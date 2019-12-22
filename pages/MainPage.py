@@ -7,6 +7,7 @@ class MainPage(BasePage):
     searchTextBox = (By.XPATH,'//*[@id="searchData"]')
     searchButton=(By.XPATH,'//*[@id="header"]/div/div/div[2]/div[1]/a')
     usernameLinkName= (By.XPATH,'//*[@id="header"]/div/div/div[2]/div[2]/div[2]/div[1]/a[2]/text()')
+    sepetimButton=(By.XPATH,'//*[@id="header"]/div/div/div[2]/div[2]/div[4]/a')
     def click_login_button(self):
         lgnButton = self.driver.find_element(*MainPage.loginButton)
         lgnButton.click()
@@ -14,3 +15,7 @@ class MainPage(BasePage):
     def enter_search_text(self, searchtext):
         srcButton = self.driver.find_element(*MainPage.searchTextBox)
         srcButton.send_keys(searchtext)
+
+    def click_sepetim(self):
+        sepetimButton = self.driver.find_element(*MainPage.sepetimButton)
+        sepetimButton.click()
