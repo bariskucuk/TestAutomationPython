@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
         assert pages.MainPage.MainPage.get_username(self) == "Barış Küçük"
 
     def test_search(self):
-        pages.CommonMethods.login_and_search(self)
+        pages.CommonMethods.CommonMethods.login_and_search(self)
         assert pages.AramaPage.AramaPage.is_second_page_link_active(self) == "active "
 
     def test_price_in_sepetim(self):
@@ -32,11 +32,13 @@ class MyTestCase(unittest.TestCase):
         pages.CommonMethods.CommonMethods.add_a_bilgisayar_to_sepetim(self)
         quantity= pages.SepetimPage.SepetimPage.click_urun_sayisi_artirma(self)
         assert quantity == '2'
+        pages.SepetimPage.SepetimPage.click_urun_sil(self)
 
     def test_sepetim_bos(self):
         pages.CommonMethods.CommonMethods.add_a_bilgisayar_to_sepetim(self)
+        time.sleep(3)
         pages.SepetimPage.SepetimPage.click_urun_sil(self)
-        assert pages.SepetimPage.SepetimPage.sepet_bos_exists()
+        assert pages.SepetimPage.SepetimPage.sepet_bos_exists(self) == "Sepetiniz Boş"
 
     def tearDown(self):
         self.driver.close()

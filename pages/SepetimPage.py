@@ -1,6 +1,6 @@
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
-
+import time
 
 class SepetimPage(BasePage):
     UrunPrice = (
@@ -9,7 +9,7 @@ class SepetimPage(BasePage):
         By.XPATH, "/html/body/div[1]/div/div/div[1]/div[2]/div[1]/section/table[2]/tbody/tr/td[3]/div[1]/div/span[1]")
     UrunSil = (
         By.XPATH,
-        '//*[@id="newCheckout"]/div/div[1]/div[2]/div[1]/section/table[2]/tbody/tr/td[1]/div[3]/div[2]/span[1]')
+        '/html/body/div[1]/div/div/div[1]/div[2]/div[1]/section/table[2]/tbody/tr/td[1]/div[3]/div[2]/span[1]')
     SepetBosHeader = (By.XPATH, '//*[@id="wrapper"]/div[2]/div/div[1]/div[1]/h2')
     UrunSayisi = (By.CLASS_NAME, 'quantity')
 
@@ -25,9 +25,10 @@ class SepetimPage(BasePage):
         return sayi
 
     def click_urun_sil(self):
+        time.sleep(3)
         urunsilBttn = self.driver.find_element(*SepetimPage.UrunSil)
         urunsilBttn.click()
 
     def sepet_bos_exists(self):
-        sepetbos = self.driver.find_element(*SepetimPage.UrunPrice).isEmpty()
-        return sepetbos
+        sepetbos = self.driver.find_element(*SepetimPage.SepetBosHeader)
+        return sepetbos.Text
