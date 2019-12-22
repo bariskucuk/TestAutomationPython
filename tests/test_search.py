@@ -28,10 +28,10 @@ class MyTestCase(unittest.TestCase):
         price = pages.SepetimPage.SepetimPage.get_urun_price(self)
         assert pages.UrunPage.UrunPage.read_urn_price_from_textfile(self) == price
 
-    def test_increment_item_count_by_one(self):
+    def test_increment_item_count_to_two(self):
         pages.CommonMethods.CommonMethods.add_a_bilgisayar_to_sepetim(self)
-        pages.SepetimPage.SepetimPage.click_urun_sayisi_artirma(self)
-        assert pages.SepetimPage.SepetimPage.sepet_bos_exists()
+        quantity= pages.SepetimPage.SepetimPage.click_urun_sayisi_artirma(self)
+        assert quantity == '2'
 
     def test_sepetim_bos(self):
         pages.CommonMethods.CommonMethods.add_a_bilgisayar_to_sepetim(self)

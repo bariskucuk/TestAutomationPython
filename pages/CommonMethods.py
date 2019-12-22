@@ -5,6 +5,7 @@ import time
 
 
 class CommonMethods(BasePage):
+
     def login_and_search(self):
         pages.MainPage.MainPage.click_login_button(self)
         pages.LoginPage.LoginPage.login(self)
@@ -14,7 +15,8 @@ class CommonMethods(BasePage):
         pages.AramaPage.AramaPage.click_second_page(self)
 
     def add_a_bilgisayar_to_sepetim(self):
-        pages.CommonMethods.login_and_search(self)
+        pages.CommonMethods.CommonMethods.login_and_search(self)
+        time.sleep(3)
         pages.AramaPage.AramaPage.click_urun_link(self)
         time.sleep(3)
         pages.UrunPage.UrunPage.write_urn_name_price_textfile(self)
