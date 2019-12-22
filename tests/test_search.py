@@ -14,9 +14,9 @@ class MyTestCase(unittest.TestCase):
         driver.maximize_window()
         driver.get(pageUrl)
         time.sleep(5)
-        pages.MainPage.click_login_button()
-        pages.LoginPage.set_email("baris.kucuk.atilim@gmail.com")
-        pages.LoginPage.set_password("baris201371200")
+        pages.MainPage.MainPage.click_login_button(self)
+        pages.LoginPage.LoginPage.set_email(self,"baris.kucuk.atilim@gmail.com")
+        pages.LoginPage.LoginPage.set_password(self,"baris201371200")
 
     def tearDown(self):
         self.driver.close()
