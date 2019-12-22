@@ -4,3 +4,4 @@ import pages.AramaPage
 import pages.LoginPage
 import pages.SepetimPage
 import pages.UrunPage
+import pages.CommonMethods

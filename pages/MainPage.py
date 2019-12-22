@@ -16,6 +16,7 @@ class MainPage(BasePage):
     def enter_search_text(self, searchtext):
         srcButton = self.driver.find_element(*MainPage.searchTextBox)
         srcButton.send_keys(searchtext)
+
     def click_search_button(self):
         srcButton = self.driver.find_element(*MainPage.searchButton)
         srcButton.click()
@@ -23,6 +24,7 @@ class MainPage(BasePage):
     def click_sepetim(self):
         sepetimButton = self.driver.find_element(*MainPage.sepetimButton)
         sepetimButton.click()
+
     def get_username(self):
         username = self.driver.find_element(*MainPage.usernameLinkName)
         return username.get_attribute("text")
