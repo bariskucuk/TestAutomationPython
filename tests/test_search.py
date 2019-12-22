@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-from * import pages
+import pages
 
 driver=webdriver.chrome("C:\Users\Baris\PycharmProjects\n11TestAutomationPython\drivers\chromedriver.exe")
 
