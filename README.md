@@ -1,2 +1,2 @@
-# n11TestAutomationPython
-n11TestAutomationPython
+# My N11 TestAutomation Python Practice Project
+Python + Selenium + Page Object Pattern
