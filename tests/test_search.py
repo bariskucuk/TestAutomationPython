@@ -1,19 +1,25 @@
 import unittest
 from selenium import webdriver
 import pages
+import time
 
-driver = webdriver.chrome("C:\Users\Baris\PycharmProjects\chromedriver.exe")
 
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        self.driver.implicitly_wait(20)
-
+        self.driver = webdriver.Chrome(executable_path=r"C:\Users\Baris\PycharmProjects\chromedriver.exe")
     def test_something(self):
-        driver.get("https://www.n11.com/")
+        pageUrl = "https://www.n11.com/"
+        driver = self.driver
+        driver.maximize_window()
+        driver.get(pageUrl)
+        time.sleep(5)
         pages.MainPage.click_login_button()
         pages.LoginPage.set_email("baris.kucuk.atilim@gmail.com")
         pages.LoginPage.set_password("baris201371200")
+
+    def tearDown(self):
+        self.driver.close()
 
     if __name__ == '__main__':
         unittest.main()
