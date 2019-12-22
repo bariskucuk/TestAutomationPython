@@ -11,24 +11,24 @@ class UrunPage(BasePage):
 
 
     def get_urun_title(self):
-        urunadi = self.driver.find_element(*UrunPage.UrunAdiLabel)
-        return urunadi.text
+        UrunPage.urunname = self.driver.find_element(*UrunPage.UrunAdiLabel)
+        return UrunPage.urunname
 
     def get_urun_price(self):
-        urunprice = self.driver.find_element(*UrunPage.UrunPrice)
-        return urunprice.text
+        UrunPage.urunprice = self.driver.find_element(*UrunPage.UrunPrice)
+        return UrunPage.urunprice
 
     def click_sepete_ekle(self):
         sepeteekleBttn = self.driver.find_element(*UrunPage.SepeteEkle)
         sepeteekleBttn.click()
 
-    def write_urn_name_price_textfile(self,urun_name,urun_price):
-        urunFile = open("urunnameandprice.txt", "w")
-        urunFile.write(urun_name+"\n"+urun_price)
-        urunFile.close()
+    def write_urn_name_price_textfile(self):
+        urunfile = open("urunnameandprice.txt", "w")
+        urunfile.write(UrunPage.get_urun_title(self)+"\n"+UrunPage.get_urun_price(self))
+        urunfile.close()
     #TODO split name and price into two methods
     def read_urn_name_price_textfile(self):
-        urunFile = open("urunnameandprice.txt", "r")
-        urunname=urunFile.readlines().pop()
-        urunprice=urunFile.readlines().pop()
-        urunFile.close()
+        urunfile = open("urunnameandprice.txt", "r")
+        urunname=urunfile.readlines().pop()
+        urunprice=urunfile.readlines().pop()
+        urunfile.close()

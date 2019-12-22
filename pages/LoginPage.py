@@ -16,7 +16,7 @@ class LoginPage(BasePage):
         notifcationElement = self.driver.find_element(*LoginPage.loginError)
         return notifcationElement.is_displayed()
 
-    def set_password(self, password):
+    def set_password(self, password='baris201371200'):
         pwordElement = self.driver.find_element(*LoginPage.password)
         pwordElement.send_keys(password)
 
@@ -24,7 +24,7 @@ class LoginPage(BasePage):
         submitBttn = self.driver.find_element(*LoginPage.submitButton)
         submitBttn.click()
 
-    def login(self, email="baris.kucuk.atilim@gmail.com", password="baris201371200"):
-        self.set_password(password)
-        self.set_email(email)
-        self.click_submit()
+    def login(self, email='baris.kucuk.atilim@gmail.com', password='baris201371200'):
+        LoginPage.set_email(self, email)
+        LoginPage.set_password(self, password)
+        LoginPage.click_submit(self)
