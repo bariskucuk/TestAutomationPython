@@ -1,6 +1,7 @@
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
+
 class LoginPage(BasePage):
     email = (By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div/div[1]/div/form/div[1]/input')
     password = (By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div/div[1]/div/form/div[2]/input')
@@ -23,7 +24,7 @@ class LoginPage(BasePage):
         submitBttn = self.driver.find_element(*LoginPage.submitButton)
         submitBttn.click()
 
-    def login(self, email, password):
+    def login(self, email="baris.kucuk.atilim@gmail.com", password="baris201371200"):
         self.set_password(password)
         self.set_email(email)
         self.click_submit()
