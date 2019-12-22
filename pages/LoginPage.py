@@ -2,7 +2,6 @@ from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
 class LoginPage(BasePage):
-
     email = (By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div/div[1]/div/form/div[1]/input')
     password = (By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div/div[1]/div/form/div[2]/input')
     loginError = (By.XPATH, '//*[@id="loginForm"]/div[2]/div[2]/div')
