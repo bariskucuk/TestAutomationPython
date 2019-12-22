@@ -1,10 +1,14 @@
 import unittest
 from selenium import webdriver
 import pages
+from pages import MainPage
+from pages.LoginPage import LoginPage
 
-driver=webdriver.chrome("C:\Users\Baris\PycharmProjects\n11TestAutomationPython\drivers\chromedriver.exe")
+driver = webdriver.chrome("C:\Users\Baris\PycharmProjects\n11TestAutomationPython\drivers\chromedriver.exe")
 
 driver.get("https://www.n11.com/")
+
+
 class MyTestCase(unittest.TestCase):
 
     def test_something(self):
