@@ -16,7 +16,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_login(self):
         pages.MainPage.MainPage.click_login_button(self)
-        pages.LoginPage.LoginPage.login(self, 'baris.kucuk.atilim@gmail.com', 'baris201371200')
+        pages.LoginPage.LoginPage.login(self, '*', '*')
         assert pages.MainPage.MainPage.get_username(self) == "Barış Küçük"
 
     def test_search(self):
