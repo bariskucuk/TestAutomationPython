@@ -3,10 +3,10 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage(BasePage):
-    email = (By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div/div[1]/div/form/div[1]/input')
-    password = (By.XPATH, '/html/body/div[1]/div/div/div[1]/div/div/div[1]/div/form/div[2]/input')
+    email = (By.ID, 'email')
+    password = (By.ID, 'password')
     loginError = (By.XPATH, '//*[@id="loginForm"]/div[2]/div[2]/div')
-    submitButton = (By.XPATH, '//*[@id="loginButton"]')
+    submitButton = (By.ID, 'loginButton')
 
     def set_email(self, email):
         emailElement = self.driver.find_element(*LoginPage.email)

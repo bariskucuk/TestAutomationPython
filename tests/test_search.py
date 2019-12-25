@@ -17,7 +17,7 @@ class MyTestCase(unittest.TestCase):
     def test_login(self):
         pages.MainPage.MainPage.click_login_button(self)
         pages.LoginPage.LoginPage.login(self, '*', '*')
-        assert pages.MainPage.MainPage.get_username(self) == "*"
+        assert pages.MainPage.MainPage.get_username(self) == "Barış Küçük"
 
     def test_search(self):
         pages.CommonMethods.CommonMethods.login_and_search(self)
