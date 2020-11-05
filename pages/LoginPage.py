@@ -24,7 +24,7 @@ class LoginPage(BasePage):
         submitBttn = self.driver.find_element(*LoginPage.submitButton)
         submitBttn.click()
 
-    def login(self, email='baris.kucuk.atilim@gmail.com', password='baris201371200'):
+    def login(self, email='*', password='*'):
         LoginPage.set_email(self, email)
         LoginPage.set_password(self, password)
         LoginPage.click_submit(self)
